@@ -77,7 +77,7 @@ def send_cancel_appointment(recipient, date, vorname, nachname):
             fileContent = f.read()
         messageContent = fileContent.replace('[[DATE]]', date.strftime("%d.%m.%Y")).replace('[[VORNAME]]', str(vorname)).replace('[[NACHNAME]]', str(nachname))
         message.attach(MIMEText(messageContent, 'html'))
-        message['Subject'] = "Ihr Termin im Impfzentrum des DRK Odenwaldkreis am %s wurde storniert" % (str(date))
+        message['Subject'] = "Ihr Termin für einen Antikoerperrtest im Impfzentrum des DRK Odenwaldkreis am %s wurde storniert" % (str(date))
         message['From'] = "Impfzentrum des DRK Odenwaldkreis" + f' <{FROM_EMAIL}>'
         message['Reply-To'] = FROM_EMAIL
         message['To'] = recipient
@@ -104,7 +104,7 @@ def send_mail_reminder(recipient, date, vorname, nachname, appointment, url, loc
             fileContent = f.read()
         messageContent = fileContent.replace('[[DATE]]', date.strftime("%d.%m.%Y")).replace('[[VORNAME]]', str(vorname)).replace('[[NACHNAME]]', str(nachname)).replace('[[SLOT]]', str(appointment)).replace('[[LINK]]', str(url)).replace('[[ORT]]', str(location))
         message.attach(MIMEText(messageContent, 'html'))
-        message['Subject'] = "Erinnerung an Termin im Impfzentrum des DRK Odenwaldkreis am %s %s" % (str(date), str(appointment))
+        message['Subject'] = "Erinnerung an Antikörpertest im Impfzentrum des DRK Odenwaldkreis am %s %s" % (str(date), str(appointment))
         message['From'] = "Impfzentrum des DRK Odenwaldkreis" + f' <{FROM_EMAIL}>'
         message['Reply-To'] = FROM_EMAIL
         message['To'] = recipient
@@ -130,7 +130,7 @@ def send_notification(recipient, date, vorname, nachname, appointment, url, loca
         with open('../utils/MailLayout/Notification.html', encoding='utf-8') as f:
             fileContent = f.read()
         messageContent = fileContent.replace('[[DATE]]', date.strftime("%d.%m.%Y")).replace('[[VORNAME]]', str(vorname)).replace('[[NACHNAME]]', str(nachname)).replace('[[SLOT]]', str(appointment)).replace('[[LINK]]', str(url)).replace('[[ORT]]', str(location))
-        message['Subject'] = "Termin %s im Impfzentrum des DRK Odenwaldkreis am %s" % (str(appointment), str(date))
+        message['Subject'] = "Antikörpertest %s im Impfzentrum des DRK Odenwaldkreis am %s" % (str(appointment), str(date))
         message.attach(MIMEText(messageContent, 'html'))
         message['From'] = "Impfzentrum des DRK Odenwaldkreis" + f' <{FROM_EMAIL}>'
         message['Reply-To'] = FROM_EMAIL
