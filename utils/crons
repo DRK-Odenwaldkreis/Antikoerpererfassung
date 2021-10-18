@@ -1,8 +1,8 @@
-# This file is part of DRK Impfterminerfassung.
+# This file is part of DRK Antikoerpererfassung.
 
 
 ############# DAILY JOBS
-0 8 * * * /home/webservice/Impfterminerfassung/DailyJobs/reminding.sh >> /home/webservice/Logs/Impfzentrum/reminder.log 2>&1
-59 23 * * * cd /home/webservice/Impfterminerfassung/NightlyAutoClean && python3 job.py >> /home/webservice/Logs/Impfzentrum/clean.log 2>&1
+0 8 * * * /home/webservice/Antikoerpererfassung/DailyJobs/reminding.sh >> /home/webservice/Logs/Impfzentrum/reminder.log 2>&1
+59 23 * * * cd /home/webservice/Antikoerpererfassung/NightlyAutoClean && python3 job.py >> /home/webservice/Logs/Impfzentrum/clean.log 2>&1
 
-*/30 * * * * cd /home/webservice/Impfterminerfassung/AppointmentCancelationJob && python3 job.py >> ../../Logs/Impfzentrum/cancelJob.log 2>&1
+*/30 * * * * cd /home/webservice/Antikoerpererfassung/AppointmentCancelationJob && python3 job.py >> ../../Logs/Impfzentrum/cancelJob.log 2>&1

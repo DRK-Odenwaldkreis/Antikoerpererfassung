@@ -1,6 +1,6 @@
 import sys
 
-# This file is part of DRK Impfterminerfassung
+# This file is part of DRK Antikoerpererfassung
 
 def monthInt_to_string(month):
     try:

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # coding=utf-8
 
-# This file is part of DRK Impfterminerfassung.
+# This file is part of DRK Antikoerpererfassung.
 
 
 import os
