@@ -54,7 +54,7 @@ if __name__ == "__main__":
                 else:
                     location = str(opt_ort) + "," + str(opt_adress)
                 logger.debug('Handing over to sendmail of reminder')
-                url = "https://impfzentrum-odw.de/registration/index.php?cancel=cancel&t=%s&i=%s" % (token, entry)
+                url = "https://impfzentrum-odw.de/antikoerper/registration/index.php?cancel=cancel&t=%s&i=%s" % (token, entry)
                 if send_mail_reminder(mail, date, vorname, nachname, appointment, url, location):
                     logger.debug('Mail was succesfully send, closing entry in db')
                     sql = "Update Voranmeldung SET Reminded = 1 WHERE id = %s;" % (entry)
