@@ -25,6 +25,7 @@ def create_CSV(content, date):
                              "Vorname",
                              "Telefonnummer",
                              "Mailadresse",
+                             "Ort",
                              "Datum",
                              "Uhrzeit"
                              ])
